@@ -1,0 +1,22 @@
+{
+  "name": "coinanalyst-local",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c cyan,magenta npm:api npm:web",
+    "api": "node --env-file-if-exists=.env server/index.js",
+    "web": "vite --host 127.0.0.1 --strictPort",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "vite": "^7.1.7"
+  },
+  "devDependencies": {}
+}
